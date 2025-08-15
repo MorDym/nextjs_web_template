@@ -54,6 +54,7 @@ function CookieBar() {
                         <Button onClick={showAdvacedSettings}>Pokročilá nastavení</Button>
                         <Button onClick={() => {
                             cookies.forEach(cookie => setCookiesFunc(cookie.name, cookie.value, cookie.expiration, cookie.sameSite));
+                                    setIsCookieAllow(true);
                         }}>Povolit WebCookie</Button>
                     </div >
                     {advancedSettings && (
@@ -100,6 +101,7 @@ function CookieBar() {
                                 }}>Povolit vybrané</Button> {/*dodělat vybrane*/}
                                 <Button onClick={() => {
                                     cookies.forEach(cookie => setCookiesFunc(cookie.name, cookie.value, cookie.expiration, cookie.sameSite));
+                                    setIsCookieAllow(true);
                                 }}>Povolit vše</Button>
                             </div>
                         </div>
