@@ -7,15 +7,20 @@ import Menu from './ui/Menu'
 
 function Header() {
     return (
-        <div id='header' className="sticky top-0 w-full bg-gray-300 z-50 flex justify-between">
-            <ModalCookieBar />
+        <div id='header' className="sticky top-0 w-full bg-gray-300 z-50 flex justify-between mb-10">
             <div className='m-5'>
-                <Image src={logo} alt='logo' />
+            <ModalCookieBar />
+                <Image src={logo} alt='logo' width='85' />
             </div>
 
-            <div className='flex gap-5 justify-end m-5'>
+            <div className='m-5'>
                 <Menu />
             </div>
+
+         {/* div pro upravu zobrazeni menu uprostred na desktopu
+           <div className='lg:block  hidden m-5'>
+              
+            </div>*/}
         </div>
     )
 }

@@ -1,6 +1,7 @@
 export const menuLinksData = [
     {id: 1, name: 'home', href: '/'},
-    {id: 2, name: 'about', href: '/about'}
+    {id: 2, name: 'about', href: '/about'},
+    {id: 3, name: 'nabidka', href: '/nabidka'}
 ];
 
 export const footerMenuLinksData = [
@@ -17,4 +18,11 @@ export const accordionData = [
     {id: 1, title: 'prvni polozka accordion', content: ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum omnis tempora nemo rem velit doloribus sint deserunt reiciendis voluptatibus placeat, aut consequatur et nostrum amet modi cumque odio adipisci. Magnam.'},
     {id: 2, title: 'druha polozka accordion', content: ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum omnis tempora nemo rem velit doloribus sint deserunt reiciendis voluptatibus placeat, aut consequatur et nostrum amet modi cumque odio adipisci. Magnam.'},
     {id: 3, title: 'treti polozka accordion', content: ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum omnis tempora nemo rem velit doloribus sint deserunt reiciendis voluptatibus placeat, aut consequatur et nostrum amet modi cumque odio adipisci. Magnam.'},
+]
+
+export const nabidkaData = [
+    {id: 1, title: 'prvni polozka', name: 'jmeno prvni polozky', content: 'content prvni polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
+    {id: 2, title: 'druha polozka', name: 'jmeno druha polozky', content: 'content druha polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
+    {id: 3, title: 'treti polozka', name: 'jmeno treti polozky', content: 'content treti polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
+    {id: 4, title: 'ctvrta polozka', name: 'jmeno ctvrta polozky', content: 'content ctvrta polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
 ]

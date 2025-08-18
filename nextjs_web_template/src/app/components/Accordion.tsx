@@ -18,6 +18,7 @@ function Accordion({ title, content }: AccordionProps) {
         }
     }, [isOpen]);
 
+    // Vyresit problem s rozirovanim contentu
 
     return (
         <div className=''>
