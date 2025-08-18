@@ -31,3 +31,10 @@ export type CookieItemType = {
   },
   onChange: (checked: boolean) => void;
 }
+
+export type ModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  title?: string;
+  children: React.ReactNode;
+};
