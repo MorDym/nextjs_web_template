@@ -1,7 +1,8 @@
 export const menuLinksData = [
     {id: 1, name: 'home', href: '/'},
     {id: 2, name: 'about', href: '/about'},
-    {id: 3, name: 'nabidka', href: '/nabidka'}
+    {id: 3, name: 'nabidka', href: '/nabidka'},
+    {id: 4, name: 'Kontakt', href: '/contact'}
 ];
 
 export const footerMenuLinksData = [
