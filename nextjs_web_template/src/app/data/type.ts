@@ -7,6 +7,7 @@ export type MenuLinkProps = {
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     children: string;
+    className?: string;
 }
 
 export type LoaderProps = {
@@ -38,3 +39,8 @@ export type ModalProps = {
   title?: string;
   children: React.ReactNode;
 };
+
+export type AccordionProps = {
+  title: string;
+  content: string;
+}
