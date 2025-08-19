@@ -44,3 +44,29 @@ export type AccordionProps = {
   title: string;
   content: string;
 }
+
+export type SeznamItem = {
+  id: number
+  name: string
+  content: string
+}
+
+export type BasicContentProps = {
+  id: number
+  title: string
+  content?: string
+  img?: string
+  seznam?: SeznamItem[]
+}
+
+export enum ContactTypeEnum {
+  EMAIL = 'email',
+  PHONE = 'phone',
+  ADDRESS = 'address',
+}
+
+export type ContactTypeProps = {
+  id: number;
+  type: ContactTypeEnum; // toto je správně, TS to rozpozná
+  value: string;
+};

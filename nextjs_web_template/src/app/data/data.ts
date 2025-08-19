@@ -7,7 +7,9 @@ export const menuLinksData = [
 
 export const footerMenuLinksData = [
     {id: 1, name: 'home', href: '/'},
-    {id: 2, name: 'nahoru', href: '#top'}
+    {id: 2, name: 'about', href: '/about'},
+    {id: 3, name: 'nabidka', href: '/nabidka'},
+    {id: 4, name: 'Kontakt', href: '/contact'}
 ];
 
 export const cookiesData = [
@@ -32,3 +34,9 @@ export const basicContentData = [
     {id: 1, title: 'nazev obsahu', content: 'content obsahu text bla bla bla',  img: '/images/nabidka/herophoto.jpg',seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
     {id: 2, title: 'nazev druheho obsahu', content: 'content obsahu tadf afaf afad ext bla bla bla',  img: '/images/nabidka/herophoto.jpg',seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]}
 ]
+export const contactData = [
+    {id: 1, type: 'phone', value: '+420666666666'},
+    {id: 2, type: 'email', value: 'mordymy@gmail.com'},
+    {id: 3, type: 'address', value: 'Bezručova 808/4, Třebíč, 674 01'}
+]
+
