@@ -3,16 +3,23 @@ import { footerMenuLinksData } from '../data/data';
 import MenuLink from './MenuLink';
 
 function Footer() {
+
+  let date: Date = new Date();
+  let currentYear = date.getFullYear();
+
   return (
-            <div className='flex flex-col gap-5 justify-center w-screen bg-gray-300'>
-                {footerMenuLinksData.map((link) => {
-                    const { id, name, href } = link;
-                    return (
-                            <MenuLink key={id} id={id} name={name} href={href} className='hover:bg-purple-300' />
-                    );
-                }
-                )}
-            </div>
+    <div className='flex flex-col gap-5 items-center justify-center w-screen bg-gray-300 p-5'>
+      <div className='flex gap-5'>
+      {footerMenuLinksData.map((link) => {
+        const { id, name, href } = link;
+        return (
+          <MenuLink key={id} id={id} name={name} href={href} className='hover:bg-purple-300' />
+        );
+      }
+      )}
+      </div>
+      <p>MoDy´s template, {currentYear} &copy;</p>
+    </div>
   )
 }
 
