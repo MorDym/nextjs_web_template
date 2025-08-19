@@ -27,3 +27,8 @@ export const nabidkaData = [
     {id: 3, title: 'treti polozka', name: 'jmeno treti polozky', content: 'content treti polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
     {id: 4, title: 'ctvrta polozka', name: 'jmeno ctvrta polozky', content: 'content ctvrta polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
 ]
+
+export const basicContentData = [
+    {id: 1, title: 'nazev obsahu', content: 'content obsahu text bla bla bla',  img: '/images/nabidka/herophoto.jpg',seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
+    {id: 2, title: 'nazev druheho obsahu', content: 'content obsahu tadf afaf afad ext bla bla bla',  img: '/images/nabidka/herophoto.jpg',seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]}
+]
