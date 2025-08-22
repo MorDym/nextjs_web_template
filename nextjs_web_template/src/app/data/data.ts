@@ -25,9 +25,9 @@ export const accordionData = [
 
 export const nabidkaData = [
     {id: 1, title: 'prvni polozka', name: 'jmeno prvni polozky', content: 'content prvni polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
-    {id: 2, title: 'druha polozka', name: 'jmeno druha polozky', content: 'content druha polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
-    {id: 3, title: 'treti polozka', name: 'jmeno treti polozky', content: 'content treti polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
-    {id: 4, title: 'ctvrta polozka', name: 'jmeno ctvrta polozky', content: 'content ctvrta polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
+    {id: 2, title: 'druha polozka', name: 'jmeno druha polozky', content: 'content druha polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozkadfs  seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
+    {id: 3, title: 'treti polozka', name: 'jmeno treti polozky', content: 'content treti polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: 'polozka sefsaffsznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
+    {id: 4, title: 'ctvrta polozka', name: 'jmeno ctvrta polozky', content: 'content ctvrta polozky', img: '/images/nabidka/herophoto.jpg', seznam: [{id:1, name: ' ffaf seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
 ]
 
 export const basicContentData = [

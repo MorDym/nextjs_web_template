@@ -2,7 +2,7 @@ import React from "react";
 import { ModalProps } from "../data/type";
 
 
-export default function Modal({ isOpen, onClose, title, children }: ModalProps) {
+export default function Modal({ isOpen, onClose, title, children, className }: ModalProps) {
   if (!isOpen) return null;
 
   return (
@@ -11,8 +11,7 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-xl shadow-lg p-6 max-w-lg w-full relative"
-        onClick={(e) => e.stopPropagation()}
+        className={className || 'bg-white rounded-xl shadow-lg p-6 max-w-lg w-full relative text-black'} onClick={(e) => e.stopPropagation()}
       >
         {/* Zavírací tlačítko */}
      {/*   <button
