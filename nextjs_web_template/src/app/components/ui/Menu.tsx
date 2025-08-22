@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import { menuLinksData } from "../../data/data"
 import MenuLink from "../MenuLink"
+import Link from "next/link"
 
 function Menu() {
     const [isNavOpen, setIsNavOpen] = useState(false)
@@ -67,9 +68,9 @@ function Menu() {
                         {menuLinksData.map((link) => {
                             const { id, name, href } = link
                             return (
-                                <MenuLink
+                                <Link
                                     key={id}
-                                    name={name}
+                                    children={name}
                                     href={href}
                                     className="bg-purple-300 p-1 text-white w-full hover:bg-purple-500"
                                 />
@@ -83,9 +84,9 @@ function Menu() {
                 {menuLinksData.map((link) => {
                     const { id, name, href } = link
                     return (
-                        <MenuLink
+                        <Link
                             key={id}
-                            name={name}
+                            children={name}
                             href={href}
                             className="bg-purple-500 p-1 text-white"
                         />

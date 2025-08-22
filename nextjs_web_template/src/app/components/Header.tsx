@@ -4,13 +4,17 @@ import Image from 'next/image'
 import logo from '../../../public/next.svg'
 import ModalCookieBar from './ModalCookieBar'
 import Menu from './ui/Menu'
+import { useRouter } from 'next/navigation'
 
 function Header() {
+    
+   const router = useRouter();
+
     return (
         <div id='header' className="sticky top-0 w-full bg-gray-300 z-50 flex justify-between mb-10">
             <div className='m-5'>
             <ModalCookieBar />
-                <Image src={logo} alt='logo' width='85' />
+                <Image src={logo} alt='logo' width='85' onClick={() => router.push('/')} className='cursor-pointer' />
             </div>
 
             <div className='m-5'>

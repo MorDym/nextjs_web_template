@@ -1,6 +1,7 @@
 import React from 'react'
 import { footerMenuLinksData } from '../data/data';
 import MenuLink from './MenuLink';
+import Link from 'next/link';
 
 function Footer() {
 
@@ -13,7 +14,7 @@ function Footer() {
       {footerMenuLinksData.map((link) => {
         const { id, name, href } = link;
         return (
-          <MenuLink key={id} id={id} name={name} href={href} className='hover:bg-purple-300' />
+          <Link key={id} children={name} href={href} className='hover:bg-purple-300' />
         );
       }
       )}
