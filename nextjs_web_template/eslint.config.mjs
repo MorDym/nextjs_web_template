@@ -11,6 +11,23 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    rules: {
+      "@typescript-eslint/member-delimiter-style": [
+        "error",
+        {
+          multiline: {
+            delimiter: "semi", // používej středník
+            requireLast: true, // poslední člen musí mít středník
+          },
+          singleline: {
+            delimiter: "semi",
+            requireLast: false,
+          },
+        },
+      ],
+    },
+  },
 ];
 
 export default eslintConfig;

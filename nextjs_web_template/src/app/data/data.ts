@@ -40,3 +40,10 @@ export const contactData = [
     {id: 3, type: 'address', value: 'Bezručova 808/4, Třebíč, 674 01'}
 ]
 
+
+export const NewsData = [
+    {id: 1, title: 'aktualita', content: 'obsah jedne aktuality', url: 'string', caption: 'string', seznam: [{id:1, name: ' ffaf seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
+    {id: 2, title: 'druha aktualita', content: 'obsah druhe aktuality', img: '/images/nabidka/herophoto.jpg', url: 'string', caption: 'string'}
+]
+
+

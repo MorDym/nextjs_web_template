@@ -49,7 +49,7 @@ export type AccordionProps = {
 export type SeznamItem = {
   id: number
   name: string
-  content: string
+  content?: string
 }
 
 export type BasicContentProps = {
@@ -71,3 +71,14 @@ export type ContactTypeProps = {
   type: ContactTypeEnum; // toto je správně, TS to rozpozná
   value: string;
 };
+
+export type NewBoxProps= {
+  id: number;
+  title: string;
+  content: string;
+  img?: string;
+  url?: string;
+  children?: React.ReactNode;
+  caption?: string;
+  seznam?: SeznamItem[];
+}
