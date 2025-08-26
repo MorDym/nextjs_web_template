@@ -13,8 +13,42 @@ export const footerMenuLinksData = [
 ];
 
 export const cookiesData = [
-    {id: 1, name: 'web_cookie', value: 'nejaka hodnota', expiration: 60*60*24*7, path: '/', description: 'Bez týhle to prostě nepůjde', nameVis: 'Technická cookie', enable: true, sameSite: 'Strict', required: true},   
-    {id: 2, name: 'web_cookie2', value: 'nejaka nekoukej', expiration: 60*60*24*7, path: '/', description: 'toto jsou nějaké cookies', nameVis: 'vidi uzivatel', enable: true, sameSite: 'Strict', required: false}    
+  {
+    id: 1,
+    name: "necessary_cookie",
+    value: "1",
+    expiration: 60*60*24*7,
+    description: "Bez této cookie web nefunguje",
+    nameVis: "Technická cookie",
+    enable: true,
+    sameSite: "Strict",
+    required: true,
+    category: "necessary"
+  },
+  {
+    id: 2,
+    name: "analytics_cookie",
+    value: "1",
+    expiration: 60*60*24*7,
+    description: "Měření návštěvnosti (Google Analytics)",
+    nameVis: "Analytická cookie",
+    enable: false,
+    sameSite: "Lax",
+    required: false,
+    category: "analytics"
+  },
+  {
+    id: 3,
+    name: "marketing_cookie",
+    value: "1",
+    expiration: 60*60*24*7,
+    description: "Personalizovaná reklama",
+    nameVis: "Marketingová cookie",
+    enable: false,
+    sameSite: "Lax",
+    required: false,
+    category: "marketing"
+  }
 ];
 
 export const accordionData = [
@@ -43,7 +77,9 @@ export const contactData = [
 
 export const NewsData = [
     {id: 1, title: 'aktualita', content: 'obsah jedne aktuality', url: 'string', caption: 'string', seznam: [{id:1, name: ' ffaf seznamu 1', content: 'content polozky sesnamu 1'},{id:2, name: 'polozka seznamu 2', content: 'content polozky sesnamu 2'}]},
-    {id: 2, title: 'druha aktualita', content: 'obsah druhe aktuality', img: '/images/nabidka/herophoto.jpg', url: 'string', caption: 'string'}
+    {id: 2, title: 'druha aktualita', content: 'obsah druhe aktuality', img: '/images/nabidka/herophoto.jpg', url: 'string', caption: 'string'},
+    {id: 3, title: 'druha aktualita', content: 'obsah druhe aktuality', img: '/images/nabidka/herophoto.jpg', url: 'string', caption: 'string'},
+    {id: 4, title: 'aktualita', content: 'obsah jedne aktuality', seznam: [{id:1, name: ' ffaf seznamu 148', content: 'content polozky sesnamu 155'},{id:2, name: 'polozka seznamu 2848', content: 'content polozky sesnamu 2484'}]},
 ]
 
 

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { getCookie, setCookiesFunc } from '../functions'
+import { deleteCookiesFunc, getCookie, setCookiesFunc } from '../functions'
 import Button from './ui/Button';
 import { cookiesData } from '../data/data';
 import SwitchButton from './ui/SwitchButton';
-import CookieItem from './CookieItem';
 import Modal from './Modal';
 
 function CookieBar() {
@@ -15,24 +14,21 @@ function CookieBar() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (getCookie("web_cookie")) {
+            if (getCookie("necessary_cookie")) {
                 setIsCookieAllow(true);
                 setAdvancedSettings(false);
                 clearInterval(interval);
             }
         }, 500);
 
-
-
-
         return () => clearInterval(interval);
     }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const allowed = getCookie("web_cookie");
+            const allowed = getCookie("necessary_cookie");
             if (!allowed) setIsCookieAllow(false);
-        }, 1000); // kontrola každou 1s
+        }, 500); // kontrola každou 1s
 
         return () => clearInterval(interval);
     }, []);
@@ -98,7 +94,14 @@ function CookieBar() {
 
                                     });
                                     setIsCookieAllow(true);
-                                }}>Povolit vybrané</Button> {/*dodělat vybrane*/}
+                                }}>Povolit vybrané</Button> 
+                                <Button onClick={() => {
+                                    cookies.forEach(cookie => {
+                                        if(cookie.name !== 'necessary_cookie') {
+                                        if (cookie.enable) return; deleteCookiesFunc(cookie.name, cookie.value, cookie.sameSite);
+                                    }
+                                    setIsCookieAllow(true);});
+                                }}>Smazat vybrané</Button> 
                                 <Button onClick={() => {
                                     cookies.forEach(cookie => setCookiesFunc(cookie.name, cookie.value, cookie.expiration, cookie.sameSite));
                                     setIsCookieAllow(true);

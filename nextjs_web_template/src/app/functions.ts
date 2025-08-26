@@ -10,3 +10,7 @@ export function setCookiesFunc(name: string, value: string, expiration: number, 
     document.cookie = `${name}=${value}; max-age=${expiration}; path=/; SameSite=${sameSite}`;
 ;
 };
+export function deleteCookiesFunc(name: string, value: string, sameSite: string) {
+    document.cookie = `${name}=${value}; max-age=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=${sameSite}`;
+;
+};

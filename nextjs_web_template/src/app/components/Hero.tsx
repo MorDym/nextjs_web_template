@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './ui/Button'
+import Link from 'next/link'
 
 function Hero() {
   return (
@@ -16,7 +17,7 @@ function Hero() {
     <p className="mt-2">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut alias quibusdam molestiae non temporibus cupiditate magni dolorem et. Temporibus ad, deserunt voluptate atque doloribus expedita explicabo eius quidem aperiam eveniet!
     </p>
-    <Button>Kontakt</Button>
+    <Link children='Kontakt' href='/kontakt'></Link>
   </div>
 </section>
     
