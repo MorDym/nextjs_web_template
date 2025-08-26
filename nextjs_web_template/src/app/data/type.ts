@@ -72,7 +72,7 @@ export type ContactTypeProps = {
   value: string;
 };
 
-export type NewBoxProps= {
+export type NewBoxProps = {
   id: number;
   title: string;
   content: string;
@@ -81,4 +81,8 @@ export type NewBoxProps= {
   children?: React.ReactNode;
   caption?: string;
   seznam?: SeznamItem[];
+}
+
+export type ModalCookieBarProps = {
+  isOpen?: boolean;
 }

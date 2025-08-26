@@ -4,13 +4,23 @@ import Button from './ui/Button';
 import { cookiesData } from '../data/data';
 import SwitchButton from './ui/SwitchButton';
 import Modal from './Modal';
+import { ModalCookieBarProps } from '../data/type';
 
-function CookieBar() {
+function CookieBar({isOpen}: ModalCookieBarProps) {
 
     const [isCookieAllow, setIsCookieAllow] = useState(false);
     const [advancedSettings, setAdvancedSettings] = useState(false);
     const [cookies, setCookies] = useState(cookiesData);
 
+
+  useEffect(() => {
+  if (isOpen) {
+    setIsCookieAllow(false);
+  }
+}, [isOpen]);
+
+    console.log(isOpen);
+    
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -43,14 +53,12 @@ function CookieBar() {
                 null
                 :
                 <Modal isOpen={!isCookieAllow} onClose={() => setIsCookieAllow(false)} title="Povolíte nám Cookies?">
-
-
-                        <p>Cookies - bohužel nutnost, bez kterých Vás na náš web nemůžeme pustit.</p>
+                    <p>Cookies - bohužel nutnost, bez kterých Vás na náš web nemůžeme pustit.</p>
                     <div className={advancedSettings ? "hidden" : "flex gap-5 justify-center items-center p-4"}>
                         <Button onClick={showAdvacedSettings}>Pokročilá nastavení</Button>
                         <Button onClick={() => {
                             cookies.forEach(cookie => setCookiesFunc(cookie.name, cookie.value, cookie.expiration, cookie.sameSite));
-                                    setIsCookieAllow(true);
+                            setIsCookieAllow(true);
                         }}>Povolit WebCookie</Button>
                     </div >
                     {advancedSettings && (
@@ -94,14 +102,15 @@ function CookieBar() {
 
                                     });
                                     setIsCookieAllow(true);
-                                }}>Povolit vybrané</Button> 
+                                }}>Povolit vybrané</Button>
                                 <Button onClick={() => {
                                     cookies.forEach(cookie => {
-                                        if(cookie.name !== 'necessary_cookie') {
-                                        if (cookie.enable) return; deleteCookiesFunc(cookie.name, cookie.value, cookie.sameSite);
-                                    }
-                                    setIsCookieAllow(true);});
-                                }}>Smazat vybrané</Button> 
+                                        if (cookie.name !== 'necessary_cookie') {
+                                            if (cookie.enable) return; deleteCookiesFunc(cookie.name, cookie.value, cookie.sameSite);
+                                        }
+                                        setIsCookieAllow(true);
+                                    });
+                                }}>Smazat vybrané</Button>
                                 <Button onClick={() => {
                                     cookies.forEach(cookie => setCookiesFunc(cookie.name, cookie.value, cookie.expiration, cookie.sameSite));
                                     setIsCookieAllow(true);
