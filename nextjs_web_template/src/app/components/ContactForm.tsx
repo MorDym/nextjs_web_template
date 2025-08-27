@@ -1,80 +1,111 @@
 "use client";
-
 import { useState } from "react";
+import Button from "./ui/Button";
+import Loader from "./ui/Loader";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [success, setSuccess] = useState(false);
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [content, setContent] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    setError(false);
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email, content }),
+      });
 
-    if (res.ok) {
-      setForm({ name: "", email: "", message: "" });
-      setSuccess(true);
-      setTimeout(() => setSuccess(false), 3000);
-    } else {
-      alert("❌ Chyba při odesílání");
+      if (res.ok) {
+        const data = await res.json();
+        console.log("Sended answer:", data);
+
+        // vyčištění polí
+        setEmail("");
+        setContent("");
+        setFirstName("");
+        setLastName("");
+
+        setSuccess(true);
+      } else {
+        console.error("Error creating answer:", await res.json());
+        setError(true);
+      }
+    } catch (err) {
+      console.error(err);
+      setError(true);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-md mx-auto flex flex-col gap-4 p-4 border rounded-xl shadow-md"
-    >
-      <h2 className="text-xl font-bold">Kontaktní formulář</h2>
-
+    <form onSubmit={handleSubmit} className="space-y-2">
       <input
         type="text"
-        name="name"
-        value={form.name}
-        onChange={handleChange}
-        placeholder="Vaše jméno"
+        placeholder="Jméno"
+        className="border p-2 rounded w-full"
+        value={firstName}
         required
-        className="border rounded p-2"
+        onChange={(e) => setFirstName(e.target.value)}
       />
-
+      <input
+        type="text"
+        placeholder="Přijmení"
+        className="border p-2 rounded w-full"
+        value={lastName}
+        required
+        onChange={(e) => setLastName(e.target.value)}
+      />
       <input
         type="email"
-        name="email"
-        value={form.email}
-        onChange={handleChange}
-        placeholder="Váš e-mail"
+        placeholder="Email"
+        className="border p-2 rounded w-full"
+        value={email}
         required
-        className="border rounded p-2"
+        onChange={(e) => setEmail(e.target.value)}
       />
-
       <textarea
-        name="message"
-        value={form.message}
-        onChange={handleChange}
-        placeholder="Vaše zpráva"
+        placeholder="Zpráva"
+        className="border p-2 rounded w-full"
+        value={content}
         required
-        rows={4}
-        className="border rounded p-2"
+        onChange={(e) => setContent(e.target.value)}
       />
 
-      <button
-        type="submit"
-        className="bg-blue-600 text-white rounded p-2 hover:bg-blue-700 transition"
-      >
-        Odeslat
-      </button>
+      <div>
+        {loading ? (
+          // Spinner (můžeš nahradit <Loader /> pokud ho máš)
+          <div className="flex justify-center">
+            <p>Odesílám dotaz</p>
+            <Loader />
+          </div>
+        ) : (
+          <Button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            Odeslat dotaz
+          </Button>
+        )}
+      </div>
 
       {success && (
-        <p className="text-green-600 font-semibold">
-          ✅ Zpráva byla úspěšně odeslána!
+        <p className="text-green-600 text-sm">✅ Zpráva byla úspěšně odeslána.</p>
+      )}
+      {error && (
+        <p className="text-red-600 text-sm">
+          ❌ Něco se pokazilo, zkuste to znovu.
         </p>
       )}
     </form>
