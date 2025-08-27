@@ -86,3 +86,7 @@ export type NewBoxProps = {
 export type ModalCookieBarProps = {
   isOpen?: boolean;
 }
+
+export type PageHeaderProps = {
+  title: string;
+}
