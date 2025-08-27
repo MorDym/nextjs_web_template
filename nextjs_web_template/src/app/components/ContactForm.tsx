@@ -8,6 +8,7 @@ export default function ContactForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [content, setContent] = useState("");
+  const [consens, setConsens] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -23,7 +24,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, lastName, email, content }),
+        body: JSON.stringify({ firstName, lastName, email, content, consens }),
       });
 
       if (res.ok) {
@@ -35,6 +36,7 @@ export default function ContactForm() {
         setContent("");
         setFirstName("");
         setLastName("");
+        setConsens(false)
 
         setSuccess(true);
       } else {
@@ -82,6 +84,10 @@ export default function ContactForm() {
         required
         onChange={(e) => setContent(e.target.value)}
       />
+      <label>
+      <input type="radio" required onChange={(e) => setConsens(true)} />
+      &nbsp; Souhlasím s podmínkami
+      </label>
 
       <div>
         {loading ? (
@@ -94,6 +100,7 @@ export default function ContactForm() {
           <Button
             type="submit"
             className="bg-blue-500 text-white px-4 py-2 rounded"
+            disabled={!consens}
           >
             Odeslat dotaz
           </Button>
