@@ -71,18 +71,17 @@ function Menu() {
                         {menuLinksData.map((link) => {
                             const { id, name, href } = link
                             return (
-                               
 
-                                 <Link
-      key={id}
-      href={href}
-      onClick={() => setIsNavOpen(false)} // ← zavře menu po kliknutí
-      className={`px-4 py-2 rounded ${
-        pathname === href ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-gray-200"
-      }`}
-    >
-      {name}
-    </Link>
+
+                                <Link
+                                    key={id}
+                                    href={href}
+                                    onClick={() => setIsNavOpen(false)} // ← zavře menu po kliknutí
+                                    className={`px-4 py-2 rounded ${pathname === href ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-gray-200"
+                                        }`}
+                                >
+                                    {name}
+                                </Link>
                             )
                         })}</div>
                 </div>

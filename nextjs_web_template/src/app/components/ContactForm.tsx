@@ -98,7 +98,7 @@ export default function ContactForm() {
         ) : (
           <Button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={!consens}
           >
             Odeslat dotaz
