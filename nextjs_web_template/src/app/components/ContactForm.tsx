@@ -91,7 +91,6 @@ export default function ContactForm() {
 
       <div>
         {loading ? (
-          // Spinner (můžeš nahradit <Loader /> pokud ho máš)
           <div className="flex justify-center">
             <p>Odesílám dotaz</p>
             <Loader />

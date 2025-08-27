@@ -2,12 +2,15 @@
 
 import { useState, useRef, useEffect } from "react"
 import { menuLinksData } from "../../data/data"
-import MenuLink from "../MenuLink"
 import Link from "next/link"
+import { usePathname } from "next/navigation";
 
 function Menu() {
     const [isNavOpen, setIsNavOpen] = useState(false)
     const menuRef = useRef<HTMLDivElement>(null)
+
+    const pathname = usePathname();
+
 
     // Zavření menu kliknutím mimo
     useEffect(() => {
@@ -68,12 +71,18 @@ function Menu() {
                         {menuLinksData.map((link) => {
                             const { id, name, href } = link
                             return (
-                                <Link
-                                    key={id}
-                                    children={name}
-                                    href={href}
-                                    className="bg-purple-300 p-1 text-white w-full hover:bg-purple-500"
-                                />
+                               
+
+                                 <Link
+      key={id}
+      href={href}
+      onClick={() => setIsNavOpen(false)} // ← zavře menu po kliknutí
+      className={`px-4 py-2 rounded ${
+        pathname === href ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-gray-200"
+      }`}
+    >
+      {name}
+    </Link>
                             )
                         })}</div>
                 </div>
@@ -88,7 +97,8 @@ function Menu() {
                             key={id}
                             children={name}
                             href={href}
-                            className="bg-purple-500 p-1 text-white"
+                            // className="bg-purple-500 p-1 text-white"
+                            className={`px-4 py-2 rounded ${pathname === href ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-gray-200"}`}
                         />
                     )
                 })}
